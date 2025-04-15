@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historia Clínica Estética</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fdf6ff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #cba7e0;
+      padding: 1rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+    }
+    h2, h3 {
+      color: #7b4f9d;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    canvas {
+      border: 1px solid #999;
+      margin-top: 0.5rem;
+    }
+    button {
+      margin-top: 1rem;
+      background-color: #a66bbd;
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    const textos = {
+      hidrolipoclasia: `CONSENTIMIENTO INFORMADO PARA HIDROLIPOCLASIA CON LIPOLÍTICOS O ENZIMAS
+
+DECLARO
+Se me ha explicado que es conveniente proceder, en mi situación, a recibir tratamiento de hidrolipoclasia. El objeto de la técnica es ayudar a disminuir la celulitis, reducir el panículo adiposo, mejorar la circulación y el drenaje de la zona a tratar.
+
+El tratamiento consiste en inyectar solución salina fisiológica o agua destilada con componentes de sustancias homeopáticas del laboratorio: vasodilatadores, lipolíticos, reafirmantes, etc.
+
+Se me ha entregado en el momento de la información verbal, información escrita de cada tratamiento donde se especifica laboratorios, principios activos y proceder del tratamiento. He sido correctamente informado/a de las características de este tratamiento, de la forma y pormenores de su realización, de su mecanismo de acción, de sus efectos inmediatos, de la evolución y precauciones que deberé adoptar y de la variabilidad en el tiempo necesario para dar por finalizado el tratamiento.
+
+Entiendo que, aunque el tratamiento seleccionado sea el más adecuado para mí y a pesar de su correcta realización, a veces pueden darse efectos no deseados, como hinchazón, enrojecimiento, escozor, algún tipo de reacción alérgica local o algún hematoma que desaparecerán espontáneamente en varios días. Excepcionalmente puede aparecer infección en la zona, que se trataría adecuadamente.
+
+Sé y acepto que circunstancias personales (enfermedades, hábitos y tratamientos que no he ocultado y que consta en mi historial clínico) pueden incrementar la incidencia de las complicaciones indicadas e incluso otras.
+
+Me han informado de que, aunque este es el tratamiento más indicado para mí, pueden existir otras alternativas que también me han sido comentadas. También conozco las posibles consecuencias de no realizar el tratamiento que se me propone.
+
+Me comprometo a seguir fielmente las indicaciones, para que el tratamiento tenga los mejores resultados.
+
+Reconozco y acepto que no se me pueden dar garantías o seguridad absoluta respecto de resultados de tratamiento, y manifiesto que mis preguntas en este sentido han sido contestadas satisfactoriamente. Asumo el riesgo de que, como consecuencia de un tratamiento correctamente realizado, puedo no sentirme satisfecho/a con la apreciación personal y subjetiva del resultado estético obtenido, algo que el especialista no puede prever.
+
+He entendido claramente toda la información concerniente al tratamiento que se me ha facilitado. El médico que me ha atendido me ha permitido realizar todas las observaciones y me ha aclarado todas las dudas que he planteado.
+
+Reconozco y acepto que el tratamiento propuesto no agota los recursos y podía ser que requiriese una actuación terapéutica posterior.
+
+Sé que en cualquier momento previo al tratamiento puedo considerar mi consentimiento y anular este documento.
+
+Accedo y autorizo a seguir un control fotográfico pre y post tratamientos u otros materiales audiovisuales y gráficos y con la sola finalidad del control evolutivo de mi tratamiento y valoración científica.
+
+Considerando que he sido suficientemente informado/a y aclaradas mis posibles dudas sobre el procedimiento y posibles resultados.
+
+ES IMPORTANTE QUE LEA CUIDADOSAMENTE LA INFORMACIÓN Y HAYAN SIDO RESPONDIDAS TODAS SUS PREGUNTAS ANTES DE QUE FIRME EL CONSENTIMIENTO.
+
+Nombre y Firma de la paciente y fecha
+Nombre y firma de responsable`,
+
+      sculptra: `CONSENTIMIENTO INFORMADO PARA LA APLICACIÓN DE SCULPTRA®
+
+Datos del Paciente
+• Nombre: ________________________________________
+• Edad: _______ Género: _______
+• Teléfono: _______________________________________
+• Dirección: ______________________________________
+
+Descripción del Procedimiento
+Sculptra® es un bioestimulador de colágeno compuesto por ácido poli-L-láctico (PLLA). Su función es estimular la producción natural de colágeno, mejorando la firmeza, elasticidad y volumen de la piel. Se aplica mediante inyecciones en áreas específicas del rostro o cuerpo.
+
+El tratamiento se realiza en varias sesiones (generalmente 2 a 4) con intervalos de aproximadamente 4 a 6 semanas entre cada una. Los resultados aparecen de manera gradual en un período de 2 a 6 meses y pueden durar hasta 2 años o más, dependiendo del metabolismo del paciente y los cuidados posteriores.
+
+Posibles Beneficios
+• Mejora la calidad y textura de la piel.
+• Aumenta la producción de colágeno.
+• Recupera el volumen facial o corporal perdido por el envejecimiento.
+• Resultados naturales y progresivos.
+
+Posibles Efectos Secundarios y Riesgos
+Como cualquier procedimiento médico, la aplicación de Sculptra® puede tener efectos adversos, entre los que se incluyen:
+• Reacciones locales: enrojecimiento, hinchazón, dolor, hematomas o sensibilidad en el área tratada.
+• Pequeñas protuberancias o nódulos subcutáneos, que pueden ser temporales o persistentes.
+• Infección, por no llevar los cuidados posteriores.
+• Reacciones alérgicas en casos extremadamente raros.
+
+Contraindicaciones
+Este tratamiento NO está recomendado en los siguientes casos:
+• Alergia al ácido poli-L-láctico o a cualquier componente del producto.
+• Enfermedades autoinmunes activas o en tratamiento inmunosupresor.
+• Infecciones activas en la zona de aplicación.
+• Embarazo o lactancia.
+• Historia de cicatrización anormal (queloides o hipertróficas).
+• Uso de anticoagulantes sin autorización médica.
+
+Cuidados Posteriores
+Para optimizar los resultados y reducir efectos secundarios, se recomienda:
+• Masajear el área tratada (5 minutos, 5 veces al día, durante 5 días).
+• Evitar exposición solar directa, saunas o actividades físicas intensas por 24-48 horas.
+• No manipular ni presionar la zona tratada.
+• Seguir todas las indicaciones médicas.
+
+Declaración del Paciente
+Declaro que:
+1. He sido informado(a) de manera clara y comprensible sobre la aplicación de Sculptra®, sus beneficios, riesgos, cuidados posteriores y posibles efectos secundarios.
+2. He tenido la oportunidad de realizar preguntas, las cuales han sido respondidas satisfactoriamente.
+3. Entiendo que los resultados varían entre personas y que el efecto es progresivo.
+4. Acepto voluntariamente realizarme este procedimiento bajo mi responsabilidad.
+
+Firma del Paciente
+Nombre: ________________________________________
+Firma: _________________________________________
+Fecha: _________________________________________
+
+Firma del profesional Responsable`,
+
+      peptonas: `CONSENTIMIENTO INFORMADO PARA PEPTONAS
+Vive Bella
+
+DECLARO
+Se me ha explicado que es conveniente proceder, en mi situación, a recibir tratamiento de Peptonas. El objeto de la técnica es ayudar a dar firmeza y aumentar glúteos.
+
+El tratamiento consiste en inyectar peptonas del Laboratorio NATURAL SPAIN reafirmantes como colágeno, elastina, piel embrionaria, etc.
+
+Se me ha entregado en el momento de la información verbal, información escrita de cada tratamiento donde se especifica laboratorios, principios activos y proceder del tratamiento. He sido correctamente informado/a de las características de este tratamiento, de la forma y pormenores de su realización, de su mecanismo de acción, de sus efectos inmediatos, de la evolución y precauciones que deberé adoptar y de la variabilidad en el tiempo necesario para dar por finalizado el tratamiento.
+
+Entiendo que, aunque el tratamiento seleccionado sea el más adecuado para mí y a pesar de su correcta realización, a veces pueden darse efectos no deseados, como hinchazón, enrojecimiento, escozor, algún hematoma que desaparecerán espontáneamente en varios días.
+
+Sé y acepto que circunstancias personales (enfermedades, hábitos y tratamientos que no he ocultado y que consta en mi historial clínico) pueden incrementar la incidencia de las complicaciones indicadas e incluso otras.
+
+Me comprometo a seguir fielmente las indicaciones, para que el tratamiento tenga los mejores resultados.
+
+Asumo el riesgo de que, como consecuencia de un tratamiento correctamente realizado, puedo no sentirme satisfecho/a con la apreciación personal y subjetiva del resultado estético obtenido.
+
+He entendido claramente toda la información concerniente al tratamiento que se me ha facilitado. El personal que me ha atendido me ha permitido realizar todas las observaciones y me ha aclarado todas las dudas que he planteado.
+
+Reconozco y acepto que el tratamiento propuesto no agota los recursos y podía ser que requiriese una actuación terapéutica posterior.
+
+Sé que en cualquier momento previo al tratamiento puedo considerar mi consentimiento y anular este documento.
+
+Accedo y autorizo a seguir un control fotográfico pre y post tratamientos u otros materiales audiovisuales y gráficos y con la sola finalidad del control evolutivo de mi tratamiento y valoración científica.
+
+Considerando que he sido suficientemente informado/a y aclaradas mis posibles dudas sobre el procedimiento y posibles resultados.
+
+ES IMPORTANTE QUE LEA CUIDADOSAMENTE LA INFORMACIÓN Y HAYAN SIDO RESPONDIDAS TODAS SUS PREGUNTAS ANTES DE QUE FIRME EL CONSENTIMIENTO.
+
+Nombre y Firma de la paciente y fecha
+Nombre y firma de responsable
+
+QC. Claudia Yadira López Ortíz`
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("https://script.google.com/macros/s/AKfycbxlv1KxKMUK7BDoLh_PwNj8s9vrRW1dg8Y1Ohy-uhYYSQ9f952J4NvGvuZCHrkAGtv_/exec?tipo=leerConsentimientos")
+        .then(res => res.json())
+        .then(data => {
+          if (!data || !Array.isArray(data)) return;
+          data.forEach(row => {
+            const servicio = row[0].toLowerCase();
+            const texto = row[1];
+            if (!textos[servicio]) textos[servicio] = texto;
+          });
+        })
+        .catch(err => console.error("Error al cargar consentimientos desde Sheets:", err));
+    });
+
+    function mostrarConsentimientoManual() {
+      const servicio = document.getElementById("nuevoServicioManual").value.trim().toLowerCase();
+      const consentimiento = document.getElementById("consentimientoTexto");
+      consentimiento.value = textos[servicio] || "";
+    }
+
+    function guardarNuevoConsentimiento() {
+      const servicio = document.getElementById("nuevoServicioManual").value.trim().toLowerCase();
+      const texto = document.getElementById("consentimientoTexto").value.trim();
+
+      if (!servicio || !texto) {
+        Toastify({ text: "Debes ingresar el nombre del servicio y su consentimiento.", duration: 3000, gravity: "top", position: "right", backgroundColor: "#f44336" }).showToast();
+        return;
+      }
+
+      if (!textos[servicio]) {
+        textos[servicio] = texto;
+        Toastify({ text: "Consentimiento guardado localmente.", duration: 3000, gravity: "top", position: "right", backgroundColor: "#4caf50" }).showToast();
+
+        fetch('https://script.google.com/macros/s/AKfycbxlv1KxKMUK7BDoLh_PwNj8s9vrRW1dg8Y1Ohy-uhYYSQ9f952J4NvGvuZCHrkAGtv_/exec', {
+          method: 'POST',
+          body: JSON.stringify({ tipo: 'consentimiento', servicio: servicio, texto: texto }),
+          headers: { 'Content-Type': 'application/json' }
+        })
+        .then(response => response.text())
+        .then(data => {
+          console.log('Guardado en Google Sheets:', data);
+          Toastify({ text: "Consentimiento guardado en la nube.", duration: 3000, gravity: "top", position: "right", backgroundColor: "#4caf50" }).showToast();
+        })
+        .catch(error => {
+          console.error('Error al guardar en Google Sheets:', error);
+          Toastify({ text: "Error al guardar en la nube.", duration: 3000, gravity: "top", position: "right", backgroundColor: "#f44336" }).showToast();
+        });
+      } else {
+        Toastify({ text: "Este servicio ya estaba registrado.", duration: 3000, gravity: "top", position: "right", backgroundColor: "#ff9800" }).showToast();
+      }
+    }
+  </script>
+</head>
+<body>
+<!-- El contenido del formulario permanece igual -->
